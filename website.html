@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexduino Contest | IEEE SSCS Alexandria</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { slate: { 950: '#020617' } },
+                    fontFamily: {
+                        pixel: ['"Press Start 2P"', 'cursive'],
+                        mono: ['"Share Tech Mono"', 'monospace'],
+                    },
+                    animation: { 'blink': 'blink 1s step-end infinite' },
+                    keyframes: { blink: { '50%': { opacity: '0' } } }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #020617; color: #e2e8f0; font-family: 'Share Tech Mono', monospace; }
+        ::selection { background-color: #b91c1c; color: white; }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #331111 1px, transparent 1px),
+                            linear-gradient(to bottom, #331111 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .fallback-logo { display: none; }
+    </style>
+</head>
+<body class="bg-slate-950">
+
+    <nav class="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-red-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})">
+                    <div class="h-10 w-10 mr-3 relative">
+                        <img src="edited according to abu el kheir2.png" alt="Logo" class="h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <svg viewBox="0 0 100 100" class="fallback-logo h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#C60C30" stroke="white" stroke-width="2"/>
+                            <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="white"/>
+                            <rect x="25" y="55" width="20" height="6" fill="#C60C30" />
+                            <rect x="32" y="48" width="6" height="20" fill="#C60C30" />
+                            <rect x="65" y="55" width="20" height="6" fill="#C60C30" />
+                        </svg>
+                    </div>
+                    <span class="font-pixel text-red-600 text-xs md:text-sm tracking-tighter uppercase">ALEXDUINO</span>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-lg hover:text-red-500 transition-colors duration-300 uppercase tracking-widest text-slate-200 no-underline">About</a>
+                        <a href="#volunteer" class="text-lg hover:text-red-500 transition-colors duration-300 uppercase tracking-widest text-slate-200 no-underline">Volunteer</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-red-900/50">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-red-500 hover:bg-slate-800">About</a>
+                <a href="#volunteer" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-red-500 hover:bg-slate-800">Volunteer</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-20 pb-16 md:pt-32 md:pb-24 flex items-center justify-center min-h-screen bg-grid-pattern overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-950/50 via-slate-950/80 to-slate-950 z-0"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/20 blur-[100px] rounded-full z-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-8 flex justify-center animate-pulse">
+                <img src="Pres.png" alt="Alexduino Pixel Logo" class="h-48 md:h-64 object-contain drop-shadow-[0_0_15px_rgba(198,12,48,0.5)]" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <svg viewBox="0 0 100 100" class="fallback-logo h-48 w-48 md:h-64 md:w-64 drop-shadow-[0_0_25px_rgba(198,12,48,0.6)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#C60C30" stroke="white" stroke-width="2"/>
+                    <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="white"/>
+                    <rect x="25" y="55" width="20" height="6" fill="#C60C30" />
+                    <rect x="32" y="48" width="6" height="20" fill="#C60C30" />
+                    <rect x="65" y="55" width="20" height="6" fill="#C60C30" />
+                </svg>
+            </div>
+            
+            <h1 class="font-pixel text-2xl md:text-4xl lg:text-5xl text-white mb-6 leading-relaxed">
+                <span class="text-red-600">ARDUINO</span> CHALLENGE <br />
+                <span class="text-xs md:text-lg text-slate-400 mt-4 block font-mono tracking-widest">
+                    ALEXANDRIA &bull; EGYPT
+                </span>
+            </h1>
+
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/80 border border-slate-700 rounded-full mb-8">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-blink"></span>
+                <span class="text-sm font-mono text-slate-300">Powered by IEEE SSCS Alexandria</span>
+            </div>
+
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-300 mb-10 leading-relaxed">
+                Unleash your creativity<br/>Build the future 
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#volunteer" class="px-8 py-4 bg-transparent hover:bg-slate-800 text-red-500 border border-red-700 font-pixel text-xs md:text-sm rounded transition-all inline-block text-center no-underline">
+                    VOLUNTEER
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="terminal" class="text-red-500 h-8 w-8"></i>
+                        <h2 class="font-pixel text-xl md:text-2xl text-white">SYSTEM_INIT</h2>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-6">What is Alexduino?</h3>
+                    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+                        Alexduino is the premier Arduino-based hackathon and project contest tailored for innovative students across Alexandria and Egypt. Organized by the <span class="text-red-400 font-bold">IEEE SSCS Alexandria Chapter</span>, we aim to bridge the gap between theoretical knowledge and practical application, teaching students more about electronics, programming, and making Alexandria a hub for creativity and innovation.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <i data-lucide="chevron-right" class="text-red-500 mt-1 flex-shrink-0 h-4 w-4"></i>
+                            Open to all school students in Egypt.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <i data-lucide="chevron-right" class="text-red-500 mt-1 flex-shrink-0 h-4 w-4"></i>
+                            Focus on hardware-software integration.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <i data-lucide="chevron-right" class="text-red-500 mt-1 flex-shrink-0 h-4 w-4"></i>
+                            Exciting prizes and networking opportunities.
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="bg-slate-950 p-6 rounded-lg border border-red-900/30 text-center hover:border-red-600 transition-colors">
+                        <div class="flex justify-center mb-3">
+                            <i data-lucide="map-pin" class="text-red-500 h-10 w-10"></i>
+                        </div>
+                        <h4 class="font-pixel text-xs mb-2 uppercase">LOCATION</h4>
+                        <p class="text-slate-400 text-sm">Alexandria, Egypt</p>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-lg border border-red-900/30 text-center hover:border-red-600 transition-colors">
+                        <div class="flex justify-center mb-3">
+                            <i data-lucide="users" class="text-red-500 h-10 w-10"></i>
+                        </div>
+                        <h4 class="font-pixel text-xs mb-2 uppercase">WHO</h4>
+                        <p class="text-slate-400 text-sm">Students & Makers</p>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-lg border border-red-900/30 text-center hover:border-red-600 transition-colors col-span-2">
+                        <div class="flex justify-center mb-3">
+                            <i data-lucide="award" class="text-red-500 h-10 w-10"></i>
+                        </div>
+                        <h4 class="font-pixel text-xs mb-2 uppercase">ORGANIZER</h4>
+                        <p class="text-slate-400 text-sm">IEEE SSCS Alexandria Chapter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="volunteer" class="py-20 relative overflow-hidden bg-slate-950">
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(18,18,18,0.9)_2px,transparent_2px),linear-gradient(90deg,rgba(18,18,18,0.9)_2px,transparent_2px)] bg-[size:40px_40px] opacity-20 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-pixel text-2xl md:text-3xl text-white mb-4">
+                    <span class="text-red-600">&gt;</span> VOLUNTEER WITH US
+                </h2>
+                <p class="text-slate-400 font-mono">Join the crew behind the scenes</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-8">
+                    <div class="bg-slate-900/50 p-8 rounded-xl border border-slate-800">
+                        <h3 class="text-2xl font-bold text-white mb-4">Why Join Our Team?</h3>
+                        <p class="text-slate-400 mb-6">Being part of the IEEE SSCS organizing committee gives you hands-on experience in event management, technical logistics, and leadership.</p>
+                        
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="flex gap-4">
+                                <i data-lucide="network" class="text-red-500 h-6 w-6 shrink-0"></i>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Networking</h4>
+                                    <p class="text-xs text-slate-500">Connect with industry leaders.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <i data-lucide="medal" class="text-red-500 h-6 w-6 shrink-0"></i>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Recognition</h4>
+                                    <p class="text-xs text-slate-500">IEEE Certificates of service.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <i data-lucide="rocket" class="text-red-500 h-6 w-6 shrink-0"></i>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Growth</h4>
+                                    <p class="text-xs text-slate-500">Soft skills & technical skills.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <i data-lucide="smile" class="text-red-500 h-6 w-6 shrink-0"></i>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Community</h4>
+                                    <p class="text-xs text-slate-500">Join a family of innovators.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-red-900/30 p-8 rounded-xl">
+                    <h3 class="font-pixel text-xs md:text-sm text-white mb-6">COMMITTEE_APPLICATION</h3>
+                    
+                    <form id="volunteerForm" name="google-sheet" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <input name="name" type="text" placeholder="Full Name" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required>
+                            <input name="email" type="email" placeholder="Email Address" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required>
+                        </div>
+
+                        <div>
+                            <input name="phone" type="tel" placeholder="Phone Number (WhatsApp)" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required>
+                        </div>
+
+                        <select name="committee" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required>
+                            <option value="" disabled selected>Select Preferred Committee</option>
+                            <option>Mentor</option>
+                            <option>Technical & Logistics</option>
+                            <option>Media & Marketing</option>
+                            <option>Public Relations</option>
+                            <option>Story Telling</option>
+                        </select>
+
+                        <div class="bg-slate-950 border border-slate-800 p-3 rounded">
+                            <label class="block text-slate-400 text-xs font-mono mb-2">Are you an IEEE SSCS Member?</label>
+                            <div class="flex gap-6">
+                                <label class="flex items-center gap-2 text-slate-300 text-sm cursor-pointer hover:text-white">
+                                    <input type="radio" name="sscs_member" value="Yes" class="accent-red-600 w-4 h-4" required>
+                                    <span>Yes</span>
+                                </label>
+                                <label class="flex items-center gap-2 text-slate-300 text-sm cursor-pointer hover:text-white">
+                                    <input type="radio" name="sscs_member" value="No" class="accent-red-600 w-4 h-4" required>
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <textarea name="experience" placeholder="Tell us about your experience..." rows="3" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required></textarea>
+                        
+                        <div class="flex items-start gap-3 pt-2">
+                            <input type="checkbox" name="commitment" value="Confirmed" id="commitCheck" class="mt-1 accent-red-600 w-4 h-4 cursor-pointer" required>
+                            <label for="commitCheck" class="text-slate-400 text-xs font-mono cursor-pointer hover:text-slate-300 leading-tight">
+                                I confirm that I am committed to the contest timeline and will attend the required meetings and events.
+                            </label>
+                        </div>
+
+                        <button id="submitBtn" type="submit" class="w-full bg-slate-100 hover:bg-white text-slate-950 font-pixel text-[10px] py-3 rounded transition-colors uppercase mt-4">
+                            Apply to Volunteer
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex flex-col items-center justify-center mb-8">
+                <div class="h-16 w-16 mb-4 relative">
+                    <img src="edited according to abu el kheir2.png" alt="Logo" class="h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <svg viewBox="0 0 100 100" class="fallback-logo h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#C60C30" stroke="white" stroke-width="2"/>
+                        <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="white"/>
+                        <rect x="25" y="55" width="20" height="6" fill="#C60C30" />
+                        <rect x="32" y="48" width="6" height="20" fill="#C60C30" />
+                        <rect x="65" y="55" width="20" height="6" fill="#C60C30" />
+                    </svg>
+                </div>
+                <span class="font-pixel text-red-600 text-sm tracking-tighter uppercase">ALEXDUINO</span>
+            </div>
+            
+            <div class="text-slate-500 mb-8 max-w-md mx-auto">
+                <p>Organized by IEEE Solid-State Circuits Society (SSCS)</p>
+                <p>Alexandria Chapter</p>
+            </div>
+
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="https://www.facebook.com/profile.php?id=61578355871022" class="text-slate-600 hover:text-red-500 transition-colors uppercase text-xs tracking-widest no-underline">Facebook</a>
+                <a href="https://www.linkedin.com/showcase/alexduino/" class="text-slate-600 hover:text-red-500 transition-colors uppercase text-xs tracking-widest no-underline">LinkedIn</a>
+            </div>
+
+            <p class="text-slate-700 text-[10px] font-mono tracking-widest">
+                DESIGNED FOR EGYPT'S FUTURE ENGINEERS</br>
+                &copy; 2026 ALEXDUINO CONTEST. ALL RIGHTS RESERVED. <br/>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
+
+        // GOOGLE SHEET FORM SUBMISSION LOGIC
+        // PASTE YOUR GOOGLE SCRIPT URL HERE
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwg9lOLsxon-_o396ySuLxt3BxqZ_UDQFXB75SPsDj-hxzMSusNiNCr7r4w91kLiqMz/exec';
+        const form = document.forms['google-sheet'];
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerText = "UPLOADING...";
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    alert("Application Successful! Welcome to the team.");
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "APPLY TO VOLUNTEER";
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert("Submission failed. Please try again.");
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "APPLY TO VOLUNTEER";
+                });
+        });
+    </script>
+</body>
+</html>
