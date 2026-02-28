@@ -8,17 +8,17 @@
     <link rel="icon" type="image/png" href="Logo.png">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/IbrahimMans0ur/Alexduino/blob/main/Home.png?raw=true">
+    <meta property="og:url" content="https://your-website-url.com/">
     <meta property="og:title" content="Alexduino Contest | IEEE SSCS Alexandria">
     <meta property="og:description" content="Unleash your creativity. Build the future. Join the premier Arduino-based hackathon for students in Alexandria, Egypt.">
-    <meta property="og:image" content="https://github.com/IbrahimMans0ur/Alexduino/blob/main/Home.png?raw=true">
+    <meta property="og:image" content="https://your-website-url.com/Logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Alexduino Contest | IEEE SSCS Alexandria">
     <meta name="twitter:description" content="Unleash your creativity. Build the future. Join the premier Arduino-based hackathon for students in Alexandria, Egypt.">
-    <meta name="twitter:image" content="https://github.com/IbrahimMans0ur/Alexduino/blob/main/Home.png?raw=true">
+    <meta name="twitter:image" content="https://your-website-url.com/Logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -28,9 +28,20 @@
 
     <script>
         tailwind.config = {
+            darkMode: "class",
             theme: {
                 extend: {
-                    colors: { slate: { 950: '#020617' } },
+                    colors: {
+                        brand: {
+                            pink: "#E84393",
+                            orange: "#F2994A",
+                            gold: "#E1B12C",
+                            cyan: "#00F5FF",
+                            neonpink: "#FF2E9F",
+                            lightbg: "#F8FAFC",
+                            darkbg: "#0F172A"
+                        }
+                    },
                     fontFamily: {
                         pixel: ['"Press Start 2P"', 'cursive'],
                         mono: ['"Share Tech Mono"', 'monospace'],
@@ -43,293 +54,326 @@
     </script>
 
     <style>
-        body { background-color: #020617; color: #e2e8f0; font-family: 'Share Tech Mono', monospace; }
-        ::selection { background-color: #b91c1c; color: white; }
-        .bg-grid-pattern {
-            background-image: linear-gradient(to right, #331111 1px, transparent 1px),
-                              linear-gradient(to bottom, #331111 1px, transparent 1px);
+        body { 
+            font-family: 'Share Tech Mono', monospace;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        ::selection { background-color: #E84393; color: white; }
+        
+        /* Light mode grid pattern */
+        .bg-grid-light {
+            background-image: linear-gradient(to right, #e0b4b4 1px, transparent 1px),
+                              linear-gradient(to bottom, #e0b4b4 1px, transparent 1px);
             background-size: 40px 40px;
         }
+        
+        /* Dark mode grid pattern */
+        .bg-grid-dark {
+            background-image: linear-gradient(to right, rgba(232, 67, 147, 0.1) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(232, 67, 147, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
         .fallback-logo { display: none; }
+        
+        .glow-pink {
+            box-shadow: 0 0 20px rgba(232, 67, 147, 0.6);
+        }
+        
+        .glow-orange {
+            box-shadow: 0 0 20px rgba(242, 153, 74, 0.6);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px #FF2E9F, 0 0 20px #00F5FF;
+        }
     </style>
 </head>
-<body class="bg-slate-950">
+<body class="bg-brand-lightbg dark:bg-brand-darkbg text-gray-900 dark:text-gray-100">
 
-    <nav class="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-red-900/30">
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-brand-darkbg/80 backdrop-blur-md border-b border-gray-200 dark:border-brand-pink/20 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})">
-                    <div class="h-10 w-10 mr-3 relative">
+                    <div class="h-14 w-14 mr-1 relative">
                         <img src="Logo.png" alt="Logo" class="h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <svg viewBox="0 0 100 100" class="fallback-logo h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#C60C30" stroke="white" stroke-width="2"/>
-                            <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="white"/>
-                            <rect x="25" y="55" width="20" height="6" fill="#C60C30" />
-                            <rect x="32" y="48" width="6" height="20" fill="#C60C30" />
-                            <rect x="65" y="55" width="20" height="6" fill="#C60C30" />
+                            <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#E84393" stroke="#00F5FF" stroke-width="2"/>
+                            <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="#F2994A"/>
+                            <rect x="25" y="55" width="20" height="6" fill="#E1B12C" />
+                            <rect x="32" y="48" width="6" height="20" fill="#E1B12C" />
+                            <rect x="65" y="55" width="20" height="6" fill="#E1B12C" />
                         </svg>
                     </div>
-                    <span class="font-pixel text-red-600 text-xs md:text-sm tracking-tighter uppercase">ALEXDUINO</span>
+                    <span class="font-pixel text-brand-pink dark:text-brand-gold text-xs md:text-sm tracking-tighter ">Alex<br>Duino</span>
                 </div>
                 
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="text-lg hover:text-red-500 transition-colors duration-300 uppercase tracking-widest text-slate-200 no-underline">About</a>
-                        <a href="#volunteer" class="text-lg hover:text-red-500 transition-colors duration-300 uppercase tracking-widest text-slate-200 no-underline">Volunteer</a>
+                        <a href="#about" class="text-lg hover:text-brand-pink dark:hover:text-brand-cyan transition-colors duration-300 uppercase tracking-widest text-gray-700 dark:text-gray-300 no-underline">About</a>
+                        <a href="#volunteer" class="text-lg hover:text-brand-pink dark:hover:text-brand-cyan transition-colors duration-300 uppercase tracking-widest text-gray-700 dark:text-gray-300 no-underline">Volunteer</a>
                     </div>
                 </div>
 
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2">
+                <div class="flex items-center gap-4">
+                    <button id="themeToggle" class="p-2 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-cyan transition-colors">
+                        <i data-lucide="moon" class="dark:hidden h-5 w-5"></i>
+                        <i data-lucide="sun" class="hidden dark:block h-5 w-5"></i>
+                    </button>
+                    
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-700 dark:text-gray-300 hover:text-brand-pink p-2">
                         <i data-lucide="menu"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-red-900/50">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-brand-darkbg border-b border-gray-200 dark:border-brand-pink/20">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-red-500 hover:bg-slate-800">About</a>
-                <a href="#volunteer" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-red-500 hover:bg-slate-800">Volunteer</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-cyan hover:bg-gray-100 dark:hover:bg-brand-darkbg/50">About</a>
+                <a href="#volunteer" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-brand-pink dark:hover:text-brand-cyan hover:bg-gray-100 dark:hover:bg-brand-darkbg/50">Volunteer</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative pt-20 pb-16 md:pt-32 md:pb-24 flex items-center justify-center min-h-screen bg-grid-pattern overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-950/50 via-slate-950/80 to-slate-950 z-0"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/20 blur-[100px] rounded-full z-0"></div>
+    <section id="home" class="relative pt-20 pb-16 md:pt-32 md:pb-24 flex items-center justify-center min-h-screen bg-grid-light dark:bg-grid-dark overflow-hidden transition-colors duration-300">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white via-brand-lightbg/50 to-brand-lightbg dark:from-brand-darkbg/80 dark:via-brand-darkbg dark:to-brand-darkbg z-0 transition-colors duration-300"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-brand-pink via-brand-orange to-brand-gold opacity-20 blur-[100px] rounded-full z-0 transition-opacity duration-300"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
             <div class="mb-8 flex justify-center animate-pulse">
-                <img src="Home.png" alt="Alexduino Pixel Logo" class="h-48 md:h-64 object-contain drop-shadow-[0_0_15px_rgba(198,12,48,0.5)]" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <svg viewBox="0 0 100 100" class="fallback-logo h-48 w-48 md:h-64 md:w-64 drop-shadow-[0_0_25px_rgba(198,12,48,0.6)]" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#C60C30" stroke="white" stroke-width="2"/>
-                    <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="white"/>
-                    <rect x="25" y="55" width="20" height="6" fill="#C60C30" />
-                    <rect x="32" y="48" width="6" height="20" fill="#C60C30" />
-                    <rect x="65" y="55" width="20" height="6" fill="#C60C30" />
+                <img src="Home.png" alt="Alexduino Pixel Logo" class="h-48 md:h-64 object-contain drop-shadow-[0_0_15px_rgba(232,67,147,0.5)]" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <svg viewBox="0 0 100 100" class="fallback-logo h-48 w-48 md:h-64 md:w-64 drop-shadow-[0_0_25px_rgba(232,67,147,0.6)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#E84393" stroke="#00F5FF" stroke-width="2"/>
+                    <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="#F2994A"/>
+                    <rect x="25" y="55" width="20" height="6" fill="#E1B12C" />
+                    <rect x="32" y="48" width="6" height="20" fill="#E1B12C" />
+                    <rect x="65" y="55" width="20" height="6" fill="#E1B12C" />
                 </svg>
             </div>
             
-            <h1 class="font-pixel text-2xl md:text-4xl lg:text-5xl text-white mb-6 leading-relaxed">
-                <span class="text-red-600">ARDUINO</span> CHALLENGE <br />
-                <span class="text-xs md:text-lg text-slate-400 mt-4 block font-mono tracking-widest">
+            <h1 class="font-pixel text-2xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6 leading-relaxed">
+                <span class="text-brand-pink dark:text-brand-cyan neon-text">ARDUINO</span> CHALLENGE <br />
+                <span class="text-xs md:text-lg text-gray-600 dark:text-gray-400 mt-4 block font-mono tracking-widest">
                     ALEXANDRIA &bull; EGYPT
                 </span>
             </h1>
 
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/80 border border-slate-700 rounded-full mb-8">
-                <span class="w-2 h-2 bg-red-500 rounded-full animate-blink"></span>
-                <span class="text-sm font-mono text-slate-300">Powered by IEEE SSCS Alexandria</span>
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-brand-darkbg/80 border border-gray-300 dark:border-brand-pink/30 rounded-full mb-8 transition-colors duration-300">
+                <span class="w-2 h-2 bg-brand-pink rounded-full animate-blink"></span>
+                <span class="text-sm font-mono text-gray-700 dark:text-gray-300">Powered by IEEE SSCS Alexandria</span>
             </div>
 
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-300 mb-10 leading-relaxed">
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-10 leading-relaxed">
                 Unleash your creativity<br/>Build the future 
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#volunteer" class="px-8 py-4 bg-transparent hover:bg-slate-800 text-red-500 border border-red-700 font-pixel text-xs md:text-sm rounded transition-all inline-block text-center no-underline">
+                <a href="#volunteer" class="px-8 py-4 bg-gradient-to-r from-brand-pink to-brand-orange hover:shadow-lg shadow-md text-white border-0 font-pixel text-xs md:text-sm rounded transition-all inline-block text-center no-underline glow-pink">
                     VOLUNTEER
+                </a>
+                <a href="#about" class="px-8 py-4 bg-transparent hover:bg-gray-100 dark:hover:bg-brand-darkbg/50 text-brand-pink dark:text-brand-cyan border border-brand-pink dark:border-brand-cyan font-pixel text-xs md:text-sm rounded transition-all inline-block text-center no-underline">
+                    LEARN MORE
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-slate-900 border-t border-slate-800">
+    <section id="about" class="py-20 bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-brand-pink/20 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2">
                     <div class="flex items-center gap-3 mb-4">
-                        <i data-lucide="terminal" class="text-red-500 h-8 w-8"></i>
-                        <h2 class="font-pixel text-xl md:text-2xl text-white">SYSTEM_INIT</h2>
+                        <i data-lucide="terminal" class="text-brand-pink h-8 w-8"></i>
+                        <h2 class="font-pixel text-xl md:text-2xl text-gray-900 dark:text-white">SYSTEM_INIT</h2>
                     </div>
-                    <h3 class="text-3xl font-bold text-white mb-6">What is Alexduino?</h3>
-                    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
-                        Alexduino is the premier Arduino-based hackathon and project contest tailored for innovative students across Alexandria and Egypt. Organized by the <span class="text-red-400 font-bold">IEEE SSCS Alexandria Chapter</span>, we aim to bridge the gap between theoretical knowledge and practical application, teaching students more about electronics, programming, and making Alexandria a hub for creativity and innovation.
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">What is Alexduino?</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg mb-6 leading-relaxed">
+                        Alexduino is the premier Arduino-based hackathon and project contest tailored for innovative students across Alexandria and Egypt. Organized by the <span class="text-brand-pink dark:text-brand-cyan font-bold">IEEE SSCS Alexandria Chapter</span>, we aim to bridge the gap between theoretical knowledge and practical application, teaching students more about electronics, programming, and making Alexandria a hub for creativity and innovation.
                     </p>
                     <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="chevron-right" class="text-red-500 mt-1 flex-shrink-0 h-4 w-4"></i>
+                        <li class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                            <i data-lucide="chevron-right" class="text-brand-orange mt-1 flex-shrink-0 h-4 w-4"></i>
                             Open to all school students in Egypt.
                         </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="chevron-right" class="text-red-500 mt-1 flex-shrink-0 h-4 w-4"></i>
+                        <li class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                            <i data-lucide="chevron-right" class="text-brand-orange mt-1 flex-shrink-0 h-4 w-4"></i>
                             Focus on hardware-software integration.
                         </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="chevron-right" class="text-red-500 mt-1 flex-shrink-0 h-4 w-4"></i>
+                        <li class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                            <i data-lucide="chevron-right" class="text-brand-orange mt-1 flex-shrink-0 h-4 w-4"></i>
                             Exciting prizes and networking opportunities.
                         </li>
                     </ul>
                 </div>
                 <div class="md:w-1/2 grid grid-cols-2 gap-4">
-                    <div class="bg-slate-950 p-6 rounded-lg border border-red-900/30 text-center hover:border-red-600 transition-colors">
+                    <div class="bg-gray-50 dark:bg-brand-darkbg p-6 rounded-lg border-2 border-brand-pink/30 dark:border-brand-pink/40 text-center hover:border-brand-pink dark:hover:border-brand-cyan transition-colors duration-300">
                         <div class="flex justify-center mb-3">
-                            <i data-lucide="map-pin" class="text-red-500 h-10 w-10"></i>
+                            <i data-lucide="map-pin" class="text-brand-orange h-10 w-10"></i>
                         </div>
-                        <h4 class="font-pixel text-xs mb-2 uppercase">LOCATION</h4>
-                        <p class="text-slate-400 text-sm">Alexandria, Egypt</p>
+                        <h4 class="font-pixel text-xs mb-2 uppercase text-gray-900 dark:text-white">LOCATION</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Alexandria, Egypt</p>
                     </div>
-                    <div class="bg-slate-950 p-6 rounded-lg border border-red-900/30 text-center hover:border-red-600 transition-colors">
+                    <div class="bg-gray-50 dark:bg-brand-darkbg p-6 rounded-lg border-2 border-brand-gold/30 dark:border-brand-gold/40 text-center hover:border-brand-gold dark:hover:border-brand-cyan transition-colors duration-300">
                         <div class="flex justify-center mb-3">
-                            <i data-lucide="users" class="text-red-500 h-10 w-10"></i>
+                            <i data-lucide="users" class="text-brand-gold h-10 w-10"></i>
                         </div>
-                        <h4 class="font-pixel text-xs mb-2 uppercase">WHO</h4>
-                        <p class="text-slate-400 text-sm">Students & Makers</p>
+                        <h4 class="font-pixel text-xs mb-2 uppercase text-gray-900 dark:text-white">WHO</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Students & Makers</p>
                     </div>
-                    <div class="bg-slate-950 p-6 rounded-lg border border-red-900/30 text-center hover:border-red-600 transition-colors col-span-2">
+                    <div class="bg-gray-50 dark:bg-brand-darkbg p-6 rounded-lg border-2 border-brand-cyan/30 dark:border-brand-cyan/40 text-center hover:border-brand-cyan transition-colors duration-300 col-span-2">
                         <div class="flex justify-center mb-3">
-                            <i data-lucide="award" class="text-red-500 h-10 w-10"></i>
+                            <i data-lucide="award" class="text-brand-cyan h-10 w-10"></i>
                         </div>
-                        <h4 class="font-pixel text-xs mb-2 uppercase">ORGANIZER</h4>
-                        <p class="text-slate-400 text-sm">IEEE SSCS Alexandria Chapter</p>
+                        <h4 class="font-pixel text-xs mb-2 uppercase text-gray-900 dark:text-white">ORGANIZER</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">IEEE SSCS Alexandria Chapter</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="volunteer" class="py-20 relative overflow-hidden bg-slate-950">
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(18,18,18,0.9)_2px,transparent_2px),linear-gradient(90deg,rgba(18,18,18,0.9)_2px,transparent_2px)] bg-[size:40px_40px] opacity-20 pointer-events-none"></div>
+    <section id="volunteer" class="py-20 relative overflow-hidden bg-gradient-to-b from-brand-lightbg dark:from-brand-darkbg to-white dark:to-slate-900 transition-colors duration-300">
+        <div class="absolute inset-0 bg-grid-light dark:bg-grid-dark opacity-30 pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="font-pixel text-2xl md:text-3xl text-white mb-4">
-                    <span class="text-red-600">&gt;</span> VOLUNTEER WITH US
+                <h2 class="font-pixel text-2xl md:text-3xl text-gray-900 dark:text-white mb-4">
+                    <span class="text-brand-pink">&gt;</span> VOLUNTEER WITH US
                 </h2>
-                <p class="text-slate-400 font-mono uppercase tracking-[0.2em]">Join the crew behind the scenes</p>
+                <p class="text-gray-600 dark:text-gray-400 font-mono">Join the crew behind the scenes</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-start">
                 <div class="space-y-8">
-                    <div class="bg-slate-900/50 p-8 rounded-xl border border-slate-800">
-                        <h3 class="text-2xl font-bold text-white mb-4">Why Join Our Team?</h3>
-                        <p class="text-slate-400 mb-6">Being part of the IEEE SSCS organizing committee gives you hands-on experience in event management, technical logistics, and leadership.</p>
+                    <div class="bg-white dark:bg-slate-900/80 p-8 rounded-xl border-2 border-brand-pink/20 dark:border-brand-pink/40 transition-colors duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Why Join Our Team?</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">Being part of the IEEE SSCS organizing committee gives you hands-on experience in event management, technical logistics, and leadership.</p>
                         
                         <div class="grid sm:grid-cols-2 gap-6">
                             <div class="flex gap-4">
-                                <i data-lucide="network" class="text-red-500 h-6 w-6 shrink-0"></i>
+                                <i data-lucide="network" class="text-brand-pink h-6 w-6 shrink-0"></i>
                                 <div>
-                                    <h4 class="text-white font-bold text-sm">Networking</h4>
-                                    <p class="text-xs text-slate-500">Connect with Edtech bright minds.</p>
+                                    <h4 class="text-gray-900 dark:text-white font-bold text-sm">Networking</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Connect with industry leaders.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4">
-                                <i data-lucide="medal" class="text-red-500 h-6 w-6 shrink-0"></i>
+                                <i data-lucide="medal" class="text-brand-orange h-6 w-6 shrink-0"></i>
                                 <div>
-                                    <h4 class="text-white font-bold text-sm">Recognition</h4>
-                                    <p class="text-xs text-slate-500">IEEE Certificates of service.</p>
+                                    <h4 class="text-gray-900 dark:text-white font-bold text-sm">Recognition</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">IEEE Certificates of service.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4">
-                                <i data-lucide="rocket" class="text-red-500 h-6 w-6 shrink-0"></i>
+                                <i data-lucide="rocket" class="text-brand-gold h-6 w-6 shrink-0"></i>
                                 <div>
-                                    <h4 class="text-white font-bold text-sm">Growth</h4>
-                                    <p class="text-xs text-slate-500">Work on real-world projects and develop new skills.</p>
+                                    <h4 class="text-gray-900 dark:text-white font-bold text-sm">Growth</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Soft skills & technical skills.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4">
-                                <i data-lucide="smile" class="text-red-500 h-6 w-6 shrink-0"></i>
+                                <i data-lucide="smile" class="text-brand-cyan h-6 w-6 shrink-0"></i>
                                 <div>
-                                    <h4 class="text-white font-bold text-sm">Community</h4>
-                                    <p class="text-xs text-slate-500">Join a family of innovators.</p>
+                                    <h4 class="text-gray-900 dark:text-white font-bold text-sm">Community</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Join a family of innovators.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/50 p-8 rounded-xl border border-slate-800">
-                        <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-wider border-b border-red-900/50 pb-2">Committee Roles</h3>
+                    <div class="bg-white dark:bg-slate-900/80 p-8 rounded-xl border-2 border-brand-pink/20 dark:border-brand-pink/40 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider border-b border-brand-pink/30 dark:border-brand-pink/50 pb-2">Committee Roles</h3>
                         <div class="space-y-6">
                             <div class="group">
                                 <div class="flex items-center gap-3 mb-2">
-                                    <i data-lucide="cpu" class="text-red-500 h-5 w-5"></i>
-                                    <h4 class="text-slate-200 font-bold text-sm uppercase">Technical & Logistics</h4>
+                                    <i data-lucide="cpu" class="text-brand-pink h-5 w-5"></i>
+                                    <h4 class="text-gray-800 dark:text-slate-200 font-bold text-sm uppercase">Technical & Logistics</h4>
                                 </div>
-                                <p class="text-slate-400 text-xs leading-relaxed ml-8">Responsible for maintaining the technical assets of the contest, updating them, and developing the complete system for contest operations.</p>
+                                <p class="text-gray-700 dark:text-slate-400 text-xs leading-relaxed ml-8">Responsible for maintaining the technical assets of the contest, updating them, and developing the complete system for contest operations.</p>
                             </div>
 
                             <div class="group">
                                 <div class="flex items-center gap-3 mb-2">
-                                    <i data-lucide="graduation-cap" class="text-red-500 h-5 w-5"></i>
-                                    <h4 class="text-slate-200 font-bold text-sm uppercase">Mentor</h4>
+                                    <i data-lucide="graduation-cap" class="text-brand-pink h-5 w-5"></i>
+                                    <h4 class="text-gray-800 dark:text-slate-200 font-bold text-sm uppercase">Mentor</h4>
                                 </div>
-                                <p class="text-slate-400 text-xs leading-relaxed ml-8">Responsible for teaching students technical concepts and providing hands-on support during the project building phase.</p>
+                                <p class="text-gray-700 dark:text-slate-400 text-xs leading-relaxed ml-8">Responsible for teaching students technical concepts and providing hands-on support during the project building phase.</p>
                             </div>
 
                             <div class="group">
                                 <div class="flex items-center gap-3 mb-2">
-                                    <i data-lucide="megaphone" class="text-red-500 h-5 w-5"></i>
-                                    <h4 class="text-slate-200 font-bold text-sm uppercase">Media & Marketing</h4>
+                                    <i data-lucide="megaphone" class="text-brand-pink h-5 w-5"></i>
+                                    <h4 class="text-gray-800 dark:text-slate-200 font-bold text-sm uppercase">Media & Marketing</h4>
                                 </div>
-                                <p class="text-slate-400 text-xs leading-relaxed ml-8">Responsible for keeping social media platforms updated, active, and engaging for our growing community.</p>
+                                <p class="text-gray-700 dark:text-slate-400 text-xs leading-relaxed ml-8">Responsible for keeping social media platforms updated, active, and engaging for our growing community.</p>
                             </div>
 
                             <div class="group">
                                 <div class="flex items-center gap-3 mb-2">
-                                    <i data-lucide="handshake" class="text-red-500 h-5 w-5"></i>
-                                    <h4 class="text-slate-200 font-bold text-sm uppercase">Public Relations</h4>
+                                    <i data-lucide="handshake" class="text-brand-pink h-5 w-5"></i>
+                                    <h4 class="text-gray-800 dark:text-slate-200 font-bold text-sm uppercase">Public Relations</h4>
                                 </div>
-                                <p class="text-slate-400 text-xs leading-relaxed ml-8">Responsible for establishing connections with schools and companies to secure sponsorships and collaborations with key entities.</p>
+                                <p class="text-gray-700 dark:text-slate-400 text-xs leading-relaxed ml-8">Responsible for establishing connections with schools and companies to secure sponsorships and collaborations with key entities.</p>
                             </div>
 
                             <div class="group">
                                 <div class="flex items-center gap-3 mb-2">
-                                    <i data-lucide="book-open" class="text-red-500 h-5 w-5"></i>
-                                    <h4 class="text-slate-200 font-bold text-sm uppercase">Story Teller</h4>
+                                    <i data-lucide="book-open" class="text-brand-pink h-5 w-5"></i>
+                                    <h4 class="text-gray-800 dark:text-slate-200 font-bold text-sm uppercase">Story Telling</h4>
                                 </div>
-                                <p class="text-slate-400 text-xs leading-relaxed ml-8">Helps fabricate the narrative universe of the contest and brings the official contest character, Alex, to life.</p>
+                                <p class="text-gray-700 dark:text-slate-400 text-xs leading-relaxed ml-8">Helps fabricate the narrative universe of the contest and brings the official contest character, Alex, to life.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-900 border border-red-900/30 p-8 rounded-xl sticky top-24">
-                    <h3 class="font-pixel text-xs md:text-sm text-white mb-6">COMMITTEE APPLICATION</h3>
+                <div class="bg-white dark:bg-slate-900 border-2 border-brand-pink/30 dark:border-brand-pink/40 p-8 rounded-xl transition-colors duration-300">
+                    <h3 class="font-pixel text-xs md:text-sm text-gray-900 dark:text-white mb-6">COMMITTEE APPLICATION</h3>
                     
                     <form id="volunteerForm" name="google-sheet" class="space-y-4">
                         <div class="grid sm:grid-cols-2 gap-4">
-                            <input name="name" type="text" placeholder="Full Name" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required>
-                            <input name="email" type="email" placeholder="Email Address" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required>
+                            <input name="name" type="text" placeholder="Full Name" class="bg-brand-lightbg dark:bg-brand-darkbg border border-gray-300 dark:border-gray-600 p-3 rounded text-gray-900 dark:text-white focus:border-brand-pink dark:focus:border-brand-cyan outline-none font-mono text-sm w-full transition-colors duration-300" required>
+                            <input name="email" type="email" placeholder="Email Address" class="bg-brand-lightbg dark:bg-brand-darkbg border border-gray-300 dark:border-gray-600 p-3 rounded text-gray-900 dark:text-white focus:border-brand-pink dark:focus:border-brand-cyan outline-none font-mono text-sm w-full transition-colors duration-300" required>
                         </div>
 
                         <div>
-                            <input name="phone" type="tel" placeholder="Phone Number (WhatsApp)" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required>
+                            <input name="phone" type="tel" placeholder="Phone Number (WhatsApp)" class="bg-brand-lightbg dark:bg-brand-darkbg border border-gray-300 dark:border-gray-600 p-3 rounded text-gray-900 dark:text-white focus:border-brand-pink dark:focus:border-brand-cyan outline-none font-mono text-sm w-full transition-colors duration-300" required>
                         </div>
 
-                        <select name="committee" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required>
+                        <select name="committee" class="bg-brand-lightbg dark:bg-brand-darkbg border border-gray-300 dark:border-gray-600 p-3 rounded text-gray-900 dark:text-white focus:border-brand-pink dark:focus:border-brand-cyan outline-none font-mono text-sm w-full transition-colors duration-300" required>
                             <option value="" disabled selected>Select Preferred Committee</option>
                             <option>Mentor</option>
                             <option>Technical & Logistics</option>
                             <option>Media & Marketing</option>
                             <option>Public Relations</option>
-                            <option>Story Teller</option>
+                            <option>Story Telling</option>
                         </select>
 
-                        <div class="bg-slate-950 border border-slate-800 p-3 rounded">
-                            <label class="block text-slate-400 text-xs font-mono mb-2">Are you an IEEE SSCS Member?</label>
+                        <div class="bg-brand-lightbg dark:bg-brand-darkbg border border-gray-300 dark:border-gray-600 p-3 rounded transition-colors duration-300">
+                            <label class="block text-gray-700 dark:text-gray-300 text-xs font-mono mb-2">Are you an IEEE SSCS Member?</label>
                             <div class="flex gap-6">
-                                <label class="flex items-center gap-2 text-slate-300 text-sm cursor-pointer hover:text-white">
-                                    <input type="radio" name="sscs_member" value="Yes" class="accent-red-600 w-4 h-4" required>
+                                <label class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm cursor-pointer hover:text-brand-pink dark:hover:text-brand-cyan">
+                                    <input type="radio" name="sscs_member" value="Yes" class="accent-brand-pink w-4 h-4" required>
                                     <span>Yes</span>
                                 </label>
-                                <label class="flex items-center gap-2 text-slate-300 text-sm cursor-pointer hover:text-white">
-                                    <input type="radio" name="sscs_member" value="No" class="accent-red-600 w-4 h-4" required>
+                                <label class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm cursor-pointer hover:text-brand-pink dark:hover:text-brand-cyan">
+                                    <input type="radio" name="sscs_member" value="No" class="accent-brand-pink w-4 h-4" required>
                                     <span>No</span>
                                 </label>
                             </div>
                         </div>
 
-                        <textarea name="experience" placeholder="Tell us about your experience..." rows="3" class="bg-slate-950 border border-slate-800 p-3 rounded text-white focus:border-red-500 outline-none font-mono text-sm w-full" required></textarea>
+                        <textarea name="experience" placeholder="Tell us about your experience..." rows="3" class="bg-brand-lightbg dark:bg-brand-darkbg border border-gray-300 dark:border-gray-600 p-3 rounded text-gray-900 dark:text-white focus:border-brand-pink dark:focus:border-brand-cyan outline-none font-mono text-sm w-full transition-colors duration-300" required></textarea>
                         
                         <div class="flex items-start gap-3 pt-2">
-                            <input type="checkbox" name="commitment" value="Confirmed" id="commitCheck" class="mt-1 accent-red-600 w-4 h-4 cursor-pointer" required>
-                            <label for="commitCheck" class="text-slate-400 text-xs font-mono cursor-pointer hover:text-slate-300 leading-tight">
+                            <input type="checkbox" name="commitment" value="Confirmed" id="commitCheck" class="accent-brand-pink w-4 h-4 cursor-pointer" required>
+                            <label for="commitCheck" class="text-gray-700 dark:text-gray-400 text-xs font-mono cursor-pointer hover:text-brand-pink dark:hover:text-brand-cyan leading-tight transition-colors duration-300">
                                 I confirm that I am committed to the contest.
                             </label>
                         </div>
 
-                        <button id="submitBtn" type="submit" class="w-full bg-slate-100 hover:bg-white text-slate-950 font-pixel text-[10px] py-3 rounded transition-colors uppercase mt-4">
+                        <button id="submitBtn" type="submit" class="w-full bg-gradient-to-r from-brand-pink to-brand-orange hover:shadow-lg shadow-md text-white font-pixel text-[10px] py-3 rounded transition-all uppercase glow-pink">
                             Apply to Volunteer
                         </button>
                     </form>
@@ -338,49 +382,49 @@
         </div>
     </section>
 
-    <footer class="bg-slate-950 border-t border-slate-900 py-12">
+    <footer class="bg-gray-100 dark:bg-brand-darkbg border-t border-gray-300 dark:border-brand-pink/20 py-12 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex flex-col items-center justify-center mb-8">
-                <div class="h-16 w-16 mb-4 relative">
+            <div class="flex items-center justify-center mb-8 gap-1">
+                <div class="h-16 w-16 relative ">
                     <img src="Logo.png" alt="Logo" class="h-full w-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <svg viewBox="0 0 100 100" class="fallback-logo h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#C60C30" stroke="white" stroke-width="2"/>
-                        <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="white"/>
-                        <rect x="25" y="55" width="20" height="6" fill="#C60C30" />
-                        <rect x="32" y="48" width="6" height="20" fill="#C60C30" />
-                        <rect x="65" y="55" width="20" height="6" fill="#C60C30" />
+                        <path d="M50 95L95 75V35L85 30V25L75 30V25L65 30V20L50 10L35 20V30L25 25V30L15 25V30L5 35V75L50 95Z" fill="#E84393" stroke="#00F5FF" stroke-width="2"/>
+                        <path d="M15 45L50 30L85 45V75L50 90L15 75V45Z" fill="#F2994A"/>
+                        <rect x="25" y="55" width="20" height="6" fill="#E1B12C" />
+                        <rect x="32" y="48" width="6" height="20" fill="#E1B12C" />
+                        <rect x="65" y="55" width="20" height="6" fill="#E1B12C" />
                     </svg>
                 </div>
-                <span class="font-pixel text-red-600 text-sm tracking-tighter uppercase">ALEXDUINO</span>
+                <span class="font-pixel text-brand-pink dark:text-brand-gold text-left md:text-sm tracking-tighter">Alex<br>Duino</span>
             </div>
             
-            <div class="text-slate-500 mb-8 max-w-md mx-auto text-sm">
+            <div class="text-gray-700 dark:text-gray-400 mb-8 max-w-md mx-auto">
                 <p>Organized by IEEE Solid-State Circuits Society (SSCS)</p>
                 <p>Alexandria Chapter</p>
             </div>
 
             <div class="flex justify-center gap-6 mb-8">
-                <a href="https://www.facebook.com/profile.php?id=61578355871022" class="text-slate-600 hover:text-red-500 transition-colors uppercase text-xs tracking-widest no-underline">Facebook</a>
-                <a href="https://www.linkedin.com/showcase/alexduino/" class="text-slate-600 hover:text-red-500 transition-colors uppercase text-xs tracking-widest no-underline">LinkedIn</a>
+                <a href="https://www.facebook.com/profile.php?id=61578355871022" class="text-gray-600 dark:text-gray-500 hover:text-brand-pink dark:hover:text-brand-cyan transition-colors uppercase text-xs tracking-widest no-underline">Facebook</a>
+                <a href="https://www.linkedin.com/showcase/alexduino/" class="text-gray-600 dark:text-gray-500 hover:text-brand-pink dark:hover:text-brand-cyan transition-colors uppercase text-xs tracking-widest no-underline">LinkedIn</a>
             </div>
 
-            <p class="text-slate-700 text-[10px] font-mono tracking-widest">
+            <p class="text-gray-600 dark:text-gray-500 text-[10px] font-mono tracking-widest">
                 DESIGNED FOR EGYPT'S FUTURE ENGINEERS<br/>
                 &copy; 2026 ALEXDUINO CONTEST. ALL RIGHTS RESERVED. <br/>
             </p>
         </div>
     </footer>
 
-    <div id="successModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 hidden backdrop-blur-sm px-4">
-        <div class="bg-slate-900 border-2 border-red-600 p-8 rounded-xl max-w-sm w-full text-center shadow-[0_0_30px_rgba(198,12,48,0.3)]">
+    <div id="successModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 dark:bg-black/70 hidden backdrop-blur-sm px-4 transition-colors duration-300">
+        <div class="bg-white dark:bg-slate-900 border-2 border-brand-pink p-8 rounded-xl max-w-sm w-full text-center shadow-lg glow-pink transition-colors duration-300">
             <div class="mb-4 flex justify-center">
-                <div class="bg-red-600/20 p-4 rounded-full">
-                    <i data-lucide="check-circle-2" class="text-red-500 h-12 w-12"></i>
+                <div class="bg-brand-pink/20 p-4 rounded-full">
+                    <i data-lucide="check-circle-2" class="text-brand-pink h-12 w-12"></i>
                 </div>
             </div>
-            <h3 class="font-pixel text-lg text-white mb-2">CHALLENGE ACCEPTED</h3>
-            <p class="text-slate-400 font-mono mb-6">Application is submitted!<br/>Welcome to the Alexduino team.</p>
-            <button onclick="closeModal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-pixel text-[10px] py-3 rounded transition-all uppercase">
+            <h3 class="font-pixel text-lg text-gray-900 dark:text-white mb-2">CHALLENGE ACCEPTED</h3>
+            <p class="text-gray-700 dark:text-gray-300 font-mono mb-6">Application is successfully submitted! Welcome to the Alexduino team.</p>
+            <button onclick="closeModal()" class="w-full bg-gradient-to-r from-brand-pink to-brand-orange hover:shadow-lg shadow-md text-white font-pixel text-[10px] py-3 rounded transition-all uppercase glow-pink">
                 Continue
             </button>
         </div>
@@ -389,6 +433,24 @@
     <script>
         lucide.createIcons();
 
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        if (localStorage.getItem("theme") === "dark") {
+            html.classList.add("dark");
+        } else if (!localStorage.getItem("theme")) {
+            // Check system preference
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                html.classList.add("dark");
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+        });
+
         // Mobile Menu Logic
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
@@ -396,6 +458,7 @@
         menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
 
         // GOOGLE SHEET FORM SUBMISSION LOGIC
+        // PASTE YOUR GOOGLE SCRIPT URL HERE
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwg9lOLsxon-_o396ySuLxt3BxqZ_UDQFXB75SPsDj-hxzMSusNiNCr7r4w91kLiqMz/exec'; 
         const form = document.forms['google-sheet'];
         const submitBtn = document.getElementById('submitBtn');
@@ -408,7 +471,9 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
+                    // SHOW CUSTOM MODAL INSTEAD OF ALERT
                     successModal.classList.remove('hidden');
+                    
                     submitBtn.disabled = false;
                     submitBtn.innerText = "APPLY TO VOLUNTEER";
                     form.reset();
@@ -421,6 +486,7 @@
                 });
         });
 
+        // Function to close the modal
         function closeModal() {
             successModal.classList.add('hidden');
         }
